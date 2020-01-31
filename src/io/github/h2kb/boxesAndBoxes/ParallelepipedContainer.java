@@ -1,4 +1,4 @@
-package io.github.h2kb.boxesAndBoxes.container.common;
+package io.github.h2kb.boxesAndBoxes;
 
 public abstract class ParallelepipedContainer extends Container {
 
