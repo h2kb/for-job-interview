@@ -1,11 +1,13 @@
 package io.github.h2kb.boxesAndBoxes;
 
 import io.github.h2kb.boxesAndBoxes.common.Entity;
+import io.github.h2kb.boxesAndBoxes.tank.IHasLid;
+import io.github.h2kb.boxesAndBoxes.tank.ISealed;
 import io.github.h2kb.boxesAndBoxes.tank.ParallelepipedTank;
 
 import java.util.ArrayList;
 
-public class PaperBox extends ParallelepipedTank {
+public class PaperBox extends ParallelepipedTank implements ISealed, IHasLid {
 
     private boolean isLidClosed = true;
     private ArrayList<Entity> contents = new ArrayList<Entity>();

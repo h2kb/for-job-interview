@@ -1,6 +1,6 @@
 package io.github.h2kb.boxesAndBoxes.tank;
 
-public abstract class ParallelepipedTank extends Tank implements ISealed, IHasLid{
+public abstract class ParallelepipedTank extends Tank {
 
     private final int length;
 
