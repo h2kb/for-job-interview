@@ -10,7 +10,7 @@ public abstract class Tank extends Entity {
 
     private final int volumeCapacity;
 
-    private ArrayList<Entity> content = new ArrayList<Entity>();
+    protected ArrayList<Entity> contents = new ArrayList<Entity>();
 
     public Tank(int weight, int volume, int liftCapacity) {
         super(weight, volume);
@@ -29,6 +29,6 @@ public abstract class Tank extends Entity {
     }
 
     public String showContent() {
-        return content.toString();
+        return contents.toString();
     }
 }
