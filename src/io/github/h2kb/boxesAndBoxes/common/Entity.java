@@ -2,15 +2,12 @@ package io.github.h2kb.boxesAndBoxes.common;
 
 public abstract class Entity {
 
-    protected int weight;
+    private final int weight;
 
-    protected int volume;
+    private final int volume;
 
-    public void setWeight(int weight) {
+    public Entity(int weight, int volume) {
         this.weight = weight;
-    }
-
-    public void setVolume(int volume) {
         this.volume = volume;
     }
 
