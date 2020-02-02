@@ -1,8 +1,10 @@
-package io.github.h2kb.boxesAndBoxes;
+package io.github.h2kb.boxesAndBoxes.container;
+
+import io.github.h2kb.boxesAndBoxes.common.Entity;
 
 import java.util.ArrayList;
 
-public abstract class Container extends Entity{
+public abstract class Container extends Entity {
 
     private int liftCapacity;
 
@@ -14,10 +16,6 @@ public abstract class Container extends Entity{
 
     private boolean hasLid;
 
-    public Container() {
-        this.setLiquid(false);
-    }
-
     public void setLiftCapacity(int liftCapacity) {
         this.liftCapacity = liftCapacity;
     }
@@ -27,9 +25,9 @@ public abstract class Container extends Entity{
     }
 
     public void putIn(Entity content) throws Exception {
-        if (content.isLiquid() && !isSealed()) {
-            throw new Exception("Not sealed.");
-        }
+//        if (content.isLiquid() && !isSealed()) {
+//            throw new Exception("Not sealed.");
+//        }
 
         if (content.getVolume() <= volumeCapacity && content.getWeight() <= liftCapacity) {
             this.content.add(content);

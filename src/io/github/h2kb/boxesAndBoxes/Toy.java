@@ -1,11 +1,11 @@
 package io.github.h2kb.boxesAndBoxes;
 
+import io.github.h2kb.boxesAndBoxes.common.Entity;
+
 public class Toy extends Entity {
 
-    public Toy(String name, int weight, int volume) {
-        this.name = name;
+    public Toy(int weight, int volume) {
         this.weight = weight;
         this.volume = volume;
-        this.setLiquid(false);
     }
 }

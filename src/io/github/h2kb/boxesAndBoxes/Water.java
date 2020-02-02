@@ -1,11 +1,25 @@
 package io.github.h2kb.boxesAndBoxes;
 
-public class Water extends Entity {
+import io.github.h2kb.boxesAndBoxes.liquid.Liquid;
 
-    public Water(String name, int weight, int volume) {
-        this.name = name;
+public class Water extends Liquid{
+
+    public Water(int weight, int volume) {
         this.weight = weight;
         this.volume = volume;
-        this.setLiquid(true);
+        setLiquid();
+    }
+
+    @Override
+    public void setLiquid() {
+        this.isLiquid = true;
+    }
+
+    @Override
+    public String toString() {
+        return "Water{" +
+                "weight=" + weight +
+                ", volume=" + volume +
+                '}';
     }
 }

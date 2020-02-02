@@ -1,6 +1,6 @@
-package io.github.h2kb.boxesAndBoxes;
+package io.github.h2kb.boxesAndBoxes.container;
 
-public abstract class ParallelepipedContainer extends Container {
+public abstract class ContainerParallelepiped extends Container {
 
     private int length;
 

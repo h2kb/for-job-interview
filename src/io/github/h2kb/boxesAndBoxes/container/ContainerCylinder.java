@@ -1,6 +1,6 @@
-package io.github.h2kb.boxesAndBoxes;
+package io.github.h2kb.boxesAndBoxes.container;
 
-public class CylinderContainer extends Container {
+public class ContainerCylinder extends Container {
 
     private int height;
 

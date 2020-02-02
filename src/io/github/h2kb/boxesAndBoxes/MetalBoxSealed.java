@@ -1,9 +1,10 @@
 package io.github.h2kb.boxesAndBoxes;
 
-public class MetalBoxSealed extends ParallelepipedContainer {
+import io.github.h2kb.boxesAndBoxes.container.ContainerParallelepiped;
 
-    public MetalBoxSealed(String name, int length, int width, int height, int weight, int liftCapacity) {
-        this.setName(name);
+public class MetalBoxSealed extends ContainerParallelepiped {
+
+    public MetalBoxSealed(int length, int width, int height, int weight, int liftCapacity) {
         this.setLength(length);
         this.setWidth(width);
         this.setHeight(height);

@@ -1,9 +1,10 @@
 package io.github.h2kb.boxesAndBoxes;
 
-public class GlassJar extends CylinderContainer {
+import io.github.h2kb.boxesAndBoxes.container.ContainerCylinder;
 
-    public GlassJar(String name, int height, int radius, int weight, int liftCapacity) {
-        this.setName(name);
+public class GlassJar extends ContainerCylinder {
+
+    public GlassJar(int height, int radius, int weight, int liftCapacity) {
         this.setHeight(height);
         this.setRadius(radius);
         this.setWeight(weight);

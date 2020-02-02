@@ -1,9 +1,10 @@
 package io.github.h2kb.boxesAndBoxes;
 
-public class PaperBox extends ParallelepipedContainer {
+import io.github.h2kb.boxesAndBoxes.container.ContainerParallelepiped;
 
-    public PaperBox(String name, int length, int width, int height, int weight, int liftCapacity) {
-        this.setName(name);
+public class PaperBox extends ContainerParallelepiped {
+
+    public PaperBox(int length, int width, int height, int weight, int liftCapacity) {
         this.setLength(length);
         this.setWidth(width);
         this.setHeight(height);
