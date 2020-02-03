@@ -31,7 +31,7 @@ public class GlassJar extends CylinderTank implements ISealed, IHasLid {
             openLid();
         }
 
-        contents.add(content);
+        contents.push(content);
         closeLid();
 
         return true;

@@ -12,7 +12,7 @@ public class MetalBox extends ParallelepipedTank implements ISealed {
 
     @Override
     protected boolean doPutIn(Entity content) {
-        contents.add(content);
+        contents.push(content);
 
         return true;
     }

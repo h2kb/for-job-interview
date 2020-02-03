@@ -1,8 +1,10 @@
 package io.github.h2kb.boxesAndBoxes.tank;
 
 import io.github.h2kb.boxesAndBoxes.common.Entity;
+import io.github.h2kb.boxesAndBoxes.liquid.ILiquid;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public abstract class Tank extends Entity {
 
@@ -12,7 +14,8 @@ public abstract class Tank extends Entity {
 
     private int currentLoad = 0;
 
-    protected ArrayList<Entity> contents = new ArrayList<Entity>();
+//    protected ArrayList<Entity> contents = new ArrayList<Entity>();
+    protected Stack<Entity> contents = new Stack<Entity>();
 
     public Tank(int weight, int volume, int liftCapacity) {
         super(weight, volume);
@@ -21,20 +24,33 @@ public abstract class Tank extends Entity {
     }
 
     public boolean putIn(Entity content) {
-        if (currentLoad + content.getWeight() < liftCapacity && content.getVolume() <= volumeCapacity) {
-            boolean result = doPutIn(content);
+        if (content instanceof ILiquid && !(this instanceof ISealed)) {
+            return false;
+        }
 
-            if (result == true) {
+        if (this != content && currentLoad + content.getWeight() < liftCapacity && content.getVolume() <= volumeCapacity) {
+            boolean isResult = doPutIn(content);
+
+            if (isResult) {
                 currentLoad += content.getWeight();
             }
 
-            return result;
+            return isResult;
         }
 
         return false;
     }
 
     protected abstract boolean doPutIn(Entity content);
+
+    public boolean getOut() {
+        if (contents.isEmpty()) {
+            return false;
+        }
+
+        contents.pop();
+        return true;
+    }
 
     public int getLiftCapacity() {
         return liftCapacity;

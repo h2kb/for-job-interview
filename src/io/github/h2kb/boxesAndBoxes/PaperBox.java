@@ -27,15 +27,11 @@ public class PaperBox extends ParallelepipedTank implements IHasLid {
 
     @Override
     protected boolean doPutIn(Entity content) {
-        if (content instanceof ILiquid) {
-            return false;
-        }
-
         if (isLidClosed) {
             openLid();
         }
 
-        contents.add(content);
+        contents.push(content);
         closeLid();
 
         return true;

@@ -7,13 +7,17 @@ public class Test {
         Coffee coffee = new Coffee(1, 1);
         PaperBox paperBox = new PaperBox(5, 15, 5, 5, 5);
         MetalBox metalBox = new MetalBox(5, 25, 3, 5, 17);
-        System.out.println(paperBox.putIn(coffee));
-        System.out.println(paperBox.getVolume());
-        System.out.println(paperBox.putIn(metalBox));
-        System.out.println(metalBox.getVolume());
-        System.out.println(metalBox.getCurrentLoad());
-        System.out.println(metalBox.putIn(paperBox));
-        System.out.println(metalBox.getCurrentLoad());
-        System.out.println(metalBox.putIn(metalBox));
+        System.out.println(metalBox.getOut());
+        System.out.println(metalBox.putIn(coffee));
+        System.out.println(metalBox.showContent());
+        System.out.println(metalBox.getOut());
+        System.out.println(metalBox.showContent());
+//        System.out.println(paperBox.getVolume());
+//        System.out.println(paperBox.putIn(metalBox));
+//        System.out.println(metalBox.getVolume());
+//        System.out.println(metalBox.getCurrentLoad());
+//        System.out.println(metalBox.putIn(paperBox));
+//        System.out.println(metalBox.getCurrentLoad());
+//        System.out.println(metalBox.putIn(metalBox));
     }
 }
