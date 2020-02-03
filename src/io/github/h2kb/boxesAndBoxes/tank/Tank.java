@@ -10,6 +10,8 @@ public abstract class Tank extends Entity {
 
     private final int volumeCapacity;
 
+    private int currentLoad = 0;
+
     protected ArrayList<Entity> contents = new ArrayList<Entity>();
 
     public Tank(int weight, int volume, int liftCapacity) {
@@ -18,7 +20,21 @@ public abstract class Tank extends Entity {
         this.volumeCapacity = volume;
     }
 
-    protected abstract void putIn(Entity content);
+    public boolean putIn(Entity content) {
+        if (currentLoad + content.getWeight() < liftCapacity && content.getVolume() <= volumeCapacity) {
+            boolean result = doPutIn(content);
+
+            if (result == true) {
+                currentLoad += content.getWeight();
+            }
+
+            return result;
+        }
+
+        return false;
+    }
+
+    protected abstract boolean doPutIn(Entity content);
 
     public int getLiftCapacity() {
         return liftCapacity;
@@ -30,5 +46,9 @@ public abstract class Tank extends Entity {
 
     public String showContent() {
         return contents.toString();
+    }
+
+    public int getCurrentLoad() {
+        return currentLoad;
     }
 }

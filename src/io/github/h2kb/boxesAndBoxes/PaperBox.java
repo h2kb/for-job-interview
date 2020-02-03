@@ -1,17 +1,16 @@
 package io.github.h2kb.boxesAndBoxes;
 
 import io.github.h2kb.boxesAndBoxes.common.Entity;
+import io.github.h2kb.boxesAndBoxes.liquid.ILiquid;
 import io.github.h2kb.boxesAndBoxes.tank.IHasLid;
 import io.github.h2kb.boxesAndBoxes.tank.ParallelepipedTank;
-
-import java.util.ArrayList;
 
 public class PaperBox extends ParallelepipedTank implements IHasLid {
 
     private boolean isLidClosed = true;
 
-    public PaperBox(int weight, int volume, int liftCapacity, int length, int width, int height) {
-        super(weight, volume, liftCapacity, length, width, height);
+    public PaperBox(int weight, int liftCapacity, int length, int width, int height) {
+        super(weight, liftCapacity, length, width, height);
     }
 
     @Override
@@ -27,12 +26,18 @@ public class PaperBox extends ParallelepipedTank implements IHasLid {
     }
 
     @Override
-    protected void putIn(Entity content) {
+    protected boolean doPutIn(Entity content) {
+        if (content instanceof ILiquid) {
+            return false;
+        }
+
         if (isLidClosed) {
             openLid();
         }
 
         contents.add(content);
         closeLid();
+
+        return true;
     }
 }
