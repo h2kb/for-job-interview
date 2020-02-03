@@ -16,5 +16,4 @@ public class Test {
         System.out.println(metalBox.getCurrentLoad());
         System.out.println(metalBox.putIn(metalBox));
     }
-
 }
